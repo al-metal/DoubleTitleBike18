@@ -16,5 +16,18 @@ namespace DoubleTitleBike18
         {
             InitializeComponent();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            tbLogin.Text = Properties.Settings.Default.login;
+            tbPass.Text = Properties.Settings.Default.password;
+        }
+
+        private void btnGo_Click(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.login = tbLogin.Text;
+            Properties.Settings.Default.password = tbPass.Text;
+            Properties.Settings.Default.Save();
+        }
     }
 }
